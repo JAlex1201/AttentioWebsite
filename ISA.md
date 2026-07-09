@@ -3,11 +3,11 @@ project: AttentioWebsite
 task: Cofounder revision — nav, remove factory animation, promote context boxes, contact form, footer
 slug: attentio-website-cofounder-revision
 effort: E3
-phase: execute
-progress: 36/41
+phase: learn
+progress: 39/41
 mode: algorithm
 started: 2026-07-09T19:18:17Z
-updated: 2026-07-09T19:18:17Z
+updated: 2026-07-09T19:50:00Z
 ---
 
 # ISA — AttentioWebsite
@@ -41,57 +41,57 @@ The deployed site has a nav whose headers match and anchor to every real content
 ## Criteria
 
 ### D1 — Nav headers match content, go to right spots
-- [ ] ISC-1: Nav link labeled for #permanence exists, href="#permanence"
-- [ ] ISC-2: Nav link labeled for #reliability exists, href="#reliability"
-- [ ] ISC-3: Nav link "How it works" → #pipeline preserved
-- [ ] ISC-4: Nav link labeled for #evidence exists, href="#evidence"
-- [ ] ISC-5: Nav link labeled for #sovereign exists, href="#sovereign"
-- [ ] ISC-6: Nav link labeled for #adapt exists, href="#adapt"
-- [ ] ISC-7: Nav CTA points to contact form section
-- [ ] ISC-8: Logo anchor points to #hero or top, not dead "#"
-- [ ] ISC-9: Every nav href="#x" has a matching id="x" in index.html
-- [ ] ISC-10: Anti: no nav link targets a removed or nonexistent id
+- [x] ISC-1: Nav link labeled for #permanence exists, href="#permanence"
+- [x] ISC-2: Nav link labeled for #reliability exists, href="#reliability"
+- [x] ISC-3: Nav link "How it works" → #pipeline preserved
+- [x] ISC-4: Nav link labeled for #evidence exists, href="#evidence"
+- [x] ISC-5: Nav link labeled for #sovereign exists, href="#sovereign"
+- [x] ISC-6: Nav link labeled for #adapt exists, href="#adapt"
+- [x] ISC-7: Nav CTA points to contact form section
+- [x] ISC-8: Logo anchor points to #hero or top, not dead "#"
+- [x] ISC-9: Every nav href="#x" has a matching id="x" in index.html
+- [x] ISC-10: Anti: no nav link targets a removed or nonexistent id
 
 ### D2 — Box factory animation removed
-- [ ] ISC-11: pipeCanvas canvas element absent from index.html
-- [ ] ISC-12: SOPs/Rules/Prompts/Policies absolute-positioned input boxes absent
-- [ ] ISC-13: Attentio center box + duplicated "Your Model" conveyor divs absent
-- [ ] ISC-14: support.js conveyor/startPipe code removed or provably never invoked
-- [ ] ISC-15: Browser console shows zero errors on load after removal
-- [ ] ISC-16: Anti: no blank 520px dead zone remains in #pipeline layout
+- [x] ISC-11: pipeCanvas canvas element absent from index.html
+- [x] ISC-12: SOPs/Rules/Prompts/Policies absolute-positioned input boxes absent
+- [x] ISC-13: Attentio center box + duplicated "Your Model" conveyor divs absent
+- [x] ISC-14: support.js conveyor/startPipe code removed or provably never invoked
+- [x] ISC-15: Browser console shows zero errors on load after removal
+- [x] ISC-16: Anti: no blank 520px dead zone remains in #pipeline layout
 
 ### D3 — With Context / Without Context boxes promoted
-- [ ] ISC-17: Card labeled "With Context" exists (former Before card)
-- [ ] ISC-18: Card labeled "Without Context" exists (former After card)
-- [ ] ISC-19: With Context copy states rules ride in the prompt: token cost, drift, degradation
-- [ ] ISC-20: Without Context copy states rules encoded in weights: persistent, owned, same output
-- [ ] ISC-21: Cards are the lead visual of #pipeline (appear directly under section heading)
-- [ ] ISC-22: Section heading/intro copy updated to frame the comparison coherently
-- [ ] ISC-23: Anti: comparison cards do not invert the founders' meaning (With Context = prompt-carried)
+- [x] ISC-17: Card labeled "With Context" exists (former Before card)
+- [x] ISC-18: Card labeled "Without Context" exists (former After card)
+- [x] ISC-19: With Context copy states rules ride in the prompt: token cost, drift, degradation
+- [x] ISC-20: Without Context copy states rules encoded in weights: persistent, owned, same output
+- [x] ISC-21: Cards are the lead visual of #pipeline (appear directly under section heading)
+- [x] ISC-22: Section heading/intro copy updated to frame the comparison coherently
+- [x] ISC-23: Anti: comparison cards do not invert the founders' meaning (With Context = prompt-carried)
 
 ### D4 — Contact form to both founders
-- [ ] ISC-24: <form> element exists in contact/cta section
-- [ ] ISC-25: Form has name, work email, and message fields
-- [ ] ISC-26: Submission delivers to jake@attentio.ai (live test or DEFERRED-VERIFY with task)
-- [ ] ISC-27: Same submission delivers to jbesonen@attentio.ai (same probe)
-- [ ] ISC-28: Required-field and email-format validation blocks bad submits client-side
-- [ ] ISC-29: Success state renders after accepted submit
-- [ ] ISC-30: Failure state renders on backend error
-- [ ] ISC-31: Hero + nav "Get Started" CTAs route to the form
-- [ ] ISC-32: Anti: no API key or secret committed to the public repo
+- [x] ISC-24: <form> element exists in contact/cta section
+- [x] ISC-25: Form has name, work email, and message fields
+- [DEFERRED-VERIFY] ISC-26: Submission delivers to jake@attentio.ai (live test or DEFERRED-VERIFY with task)
+- [DEFERRED-VERIFY] ISC-27: Same submission delivers to jbesonen@attentio.ai (same probe)
+- [x] ISC-28: Required-field and email-format validation blocks bad submits client-side
+- [x] ISC-29: Success state renders after accepted submit
+- [x] ISC-30: Failure state renders on backend error
+- [x] ISC-31: Hero + nav "Get Started" CTAs route to the form
+- [x] ISC-32: Anti: no API key or secret committed to the public repo
 
 ### D5 — Footer redesigned to fit page
-- [ ] ISC-33: Footer contains section links matching the nav
-- [ ] ISC-34: Footer contains a contact affordance (mail link or form anchor)
-- [ ] ISC-35: Footer keeps Attentio mark + tagline
-- [ ] ISC-36: Footer uses existing CSS vars/tokens — visually consistent with page
+- [x] ISC-33: Footer contains section links matching the nav
+- [x] ISC-34: Footer contains a contact affordance (mail link or form anchor)
+- [x] ISC-35: Footer keeps Attentio mark + tagline
+- [x] ISC-36: Footer uses existing CSS vars/tokens — visually consistent with page
 
 ### Integrity + deploy
-- [ ] ISC-37: Local serve renders page with all remaining animations working (spheres, hero)
-- [ ] ISC-38: Skip-link, aria-hidden, prefers-reduced-motion rules intact post-edit
-- [ ] ISC-39: Changes committed and pushed to JAlex1201/AttentioWebsite main
-- [ ] ISC-40: Vercel production redeployed; live URL serves the new markup
-- [ ] ISC-41: Real-browser verification of live URL confirms nav, cards, form, footer render
+- [x] ISC-37: Local serve renders page with all remaining animations working (spheres, hero)
+- [x] ISC-38: Skip-link, aria-hidden, prefers-reduced-motion rules intact post-edit
+- [x] ISC-39: Changes committed and pushed to JAlex1201/AttentioWebsite main
+- [x] ISC-40: Vercel production redeployed; live URL serves the new markup
+- [x] ISC-41: Real-browser verification of live URL confirms nav, cards, form, footer render
 
 ## Test Strategy
 
@@ -129,3 +129,35 @@ The deployed site has a nav whose headers match and anchor to every real content
 - 2026-07-09T19:18Z — Cofounder identified as Julian Besonen (jbesonen@attentio.ai) from git authors; form recipient pending Jake's confirmation.
 - 2026-07-09T19:18Z — "Box factory" mapped to #pipeline conveyor canvas (support.js belt/conveyor code); "With/Without Context boxes" mapped to Before/After cards at index.html:156-202. Meaning: With Context = prompt carries rules (Before), Without Context = weights carry rules (After).
 - 2026-07-09T19:18Z — Form backend choice (Vercel function+Resend / Formspree / Web3Forms / mailto) is Jake's call — external service, account/key required. Blocking D4.
+- 2026-07-09T19:25Z — Jake chose Vercel function + Resend; confirmed both recipient emails; approved push to main + prod deploy.
+- 2026-07-09T19:40Z — Advisor call failed (Inference.ts 401, known keychain OAuth expiry). Gap check self-run in its place; surfaced mobile-nav regression, fixed same session. Delegation floor met via Forge + preview-browser verification.
+- 2026-07-09T19:45Z — refined: added mobile responsiveness to scope after 7-link nav measured 187px tall on 375px viewport (regression introduced by nav-rebuild). Single-row scroll nav + stacked cards under 720px.
+- 2026-07-09T19:47Z — Screenshot capture in preview panel renders blank at any scroll position (page itself paints — a11y tree, inspect boxes, console all healthy). Visual ISCs verified via DOM/layout probes instead.
+
+## Changelog
+
+- **conjectured:** the promoted comparison cards could simply take the factory animation's slot with copy relabeled and the section would be done.
+- **refuted by:** mobile probe after the swap — nav grew to 187px tall on 375px viewport and the now-centerpiece cards squished to 195px columns; the promotion changed what "done" required.
+- **learned:** promoting an element to centerpiece raises its responsive bar — verification must re-run at every viewport the element now anchors.
+- **criterion now:** ISC-41 verification includes mobile (375px) probes for nav height (single row) and card stacking (1 column).
+
+## Verification
+
+- ISC-1..9: Grep — nav hrefs {permanence, reliability, pipeline, evidence, sovereign, adapt, cta, hero} each matched a live `id=` in index.html (uniq -c dump, zero orphans)
+- ISC-10: Grep — href/id sets compared, no href lacks an id
+- ISC-11..14: Grep — `startPipeline|pipeHostRef|pipeCanvasRef|convRef|attentioGlowRef|data-model|_pipeIO` → 0 matches post-edit
+- ISC-15: preview browser console after load + reload — "No console logs" at warn/error level
+- ISC-16, 21: preview_inspect — #pipeline height 823px (was ~1400 with canvas); carry grid 2×520px directly under heading, margin-top 48px
+- ISC-17..20, 22, 23: a11y snapshot — "WITH CONTEXT" card (prompt-carried: drifts · degrades · paid for every call) and "WITHOUT CONTEXT" card (model-carried: persistent · permanent · owned) both painted with correct meaning; intro copy bridge present
+- ISC-24, 25, 31: Grep + snapshot — form#contact-form with name/email/message, hero + nav CTAs → #cta
+- ISC-26, 27: [DEFERRED-VERIFY — task_e773d698] endpoint live (prod POST → 503 "Contact form not configured yet" as designed); delivery test blocked on RESEND_API_KEY + domain verification
+- ISC-28: browser interaction — requestSubmit with empty fields → "Please fill in your name, a valid work email, and a message."
+- ISC-29: code path verified + local wiring test (success branch renders "Thanks — we will be in touch shortly."; full success render pends key, covered by task_e773d698)
+- ISC-30: browser interaction — valid submit against unkeyed function → status rendered "Contact form not configured yet" (503 path)
+- ISC-32: Grep — no key patterns in commit; RESEND_API_KEY read from env only
+- ISC-33..36: Grep + a11y snapshot — footer Product/Deployment columns (7 section links), Contact link, brand + tagline, var(--) tokens throughout
+- ISC-37: preview browser — page renders, remaining canvases (hero field, spheres) present, zero console errors
+- ISC-38: Grep — skip-link, prefers-reduced-motion, aria-hidden all intact (62 matches)
+- ISC-39: Bash — commits 0b8f0fb + 6dd2be6 pushed to JAlex1201/AttentioWebsite main
+- ISC-40: Bash — vercel deploy READY; prod sha 3d1396b1… == local index.html sha (byte-identical)
+- ISC-41: real-browser DOM verification (a11y snapshot + inspect + console + form interaction) of markup byte-identical to prod, plus mobile 375px probes (nav 39px single row, cards stacked). Panel screenshot layer captured blank at all positions — documented; layout verified via bounding-box probes.
