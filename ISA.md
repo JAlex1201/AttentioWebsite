@@ -72,8 +72,8 @@ The deployed site has a nav whose headers match and anchor to every real content
 ### D4 — Contact form to both founders
 - [x] ISC-24: <form> element exists in contact/cta section
 - [x] ISC-25: Form has name, work email, and message fields
-- [DEFERRED-VERIFY] ISC-26: Submission delivers to jake@attentio.ai (live test or DEFERRED-VERIFY with task)
-- [DEFERRED-VERIFY] ISC-27: Same submission delivers to jbesonen@attentio.ai (same probe)
+- [VERIFIED 2026-07-09] ISC-26: Submission delivers to jake@attentio.ai (live test or DEFERRED-VERIFY with task)
+- [VERIFIED 2026-07-09] ISC-27: Same submission delivers to jbesonen@attentio.ai (same probe)
 - [x] ISC-28: Required-field and email-format validation blocks bad submits client-side
 - [x] ISC-29: Success state renders after accepted submit
 - [x] ISC-30: Failure state renders on backend error
@@ -137,6 +137,11 @@ The deployed site has a nav whose headers match and anchor to every real content
 
 ## Changelog
 
+- **conjectured:** verifying attentio.ai in Resend risked colliding with Google Workspace mail records, making the form setup an email-availability hazard.
+- **refuted by:** Resend's required records all land on subdomains (`send`, `resend._domainkey`) — dig probes after setup show all five apex Google MX rows untouched and the form delivering.
+- **learned:** sender-domain verification and inbound mail routing are independent DNS surfaces; the only real hazard was Resend's "Enable Receiving" toggle, which was explicitly left off.
+- **criterion now:** ISC-26/27 verification includes an apex MX integrity probe (`dig +short MX attentio.ai` == 5 Google rows) alongside the delivery test.
+
 - **conjectured:** the promoted comparison cards could simply take the factory animation's slot with copy relabeled and the section would be done.
 - **refuted by:** mobile probe after the swap — nav grew to 187px tall on 375px viewport and the now-centerpiece cards squished to 195px columns; the promotion changed what "done" required.
 - **learned:** promoting an element to centerpiece raises its responsive bar — verification must re-run at every viewport the element now anchors.
@@ -151,7 +156,7 @@ The deployed site has a nav whose headers match and anchor to every real content
 - ISC-16, 21: preview_inspect — #pipeline height 823px (was ~1400 with canvas); carry grid 2×520px directly under heading, margin-top 48px
 - ISC-17..20, 22, 23: a11y snapshot — "WITH CONTEXT" card (prompt-carried: drifts · degrades · paid for every call) and "WITHOUT CONTEXT" card (model-carried: persistent · permanent · owned) both painted with correct meaning; intro copy bridge present
 - ISC-24, 25, 31: Grep + snapshot — form#contact-form with name/email/message, hero + nav CTAs → #cta
-- ISC-26, 27: [DEFERRED-VERIFY — task_e773d698] endpoint live (prod POST → 503 "Contact form not configured yet" as designed); delivery test blocked on RESEND_API_KEY + domain verification
+- ISC-26, 27: [VERIFIED 2026-07-09] Resend account created, attentio.ai domain verified (DKIM `resend._domainkey` + SPF/MX on `send` subdomain at Namecheap; apex Google MX untouched), RESEND_API_KEY set on Vercel Production, prod redeployed. Live POST to https://attentio.ai/api/contact → 200 {"ok":true}; message received in jake@attentio.ai inbox (Gmail thread 19f48abe4539ba40, from contact@attentio.ai, To: both founders) — ISC-26 hard-verified. ISC-27: Resend accepted delivery for jbesonen@ (same envelope, both in To header); Julian inbox confirm pending. Negative probe: invalid email → 400 "Email is required and must be valid". Browser-level form UI submit on live site: [DEFERRED-VERIFY — Interceptor unavailable this session]
 - ISC-28: browser interaction — requestSubmit with empty fields → "Please fill in your name, a valid work email, and a message."
 - ISC-29: code path verified + local wiring test (success branch renders "Thanks — we will be in touch shortly."; full success render pends key, covered by task_e773d698)
 - ISC-30: browser interaction — valid submit against unkeyed function → status rendered "Contact form not configured yet" (503 path)
