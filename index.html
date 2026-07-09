@@ -666,7 +666,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blued);outline-offs
 <section id="cta" data-screen-label="CTA" style="background:var(--navy);color:#fff;text-align:center;padding:104px 0">
   <div style="max-width:var(--max);margin:0 auto;padding:0 28px">
     <h2 style="font-family:var(--disp);font-weight:600;letter-spacing:-.02em;line-height:1.08;font-size:clamp(32px,4.4vw,52px);max-width:18ch;margin:0 auto">Bring dependable AI inside your perimeter</h2>
-    <p style="color:#9fb0c2;font-size:18px;margin:18px auto 30px;max-width:46ch">Tell us what you need your model to do. We&rsquo;ll benchmark it on your actual tasks &mdash; in your environment, under your rules. Every message goes straight to the founders.</p>
+    <p style="color:#9fb0c2;font-size:18px;margin:18px auto 30px;max-width:46ch">Tell us what you need your model to do. We&rsquo;ll benchmark it on your actual tasks, in your environment, under your rules. Every message goes straight to the founders.</p>
     <form id="contact-form" novalidate style="max-width:520px;margin:0 auto;text-align:left;display:flex;flex-direction:column;gap:14px">
       <label style="display:flex;flex-direction:column;gap:6px;font-size:13.5px;font-weight:600;color:#c7d3e0">Name
         <input name="name" type="text" required maxlength="200" autocomplete="name" style="font-family:var(--body);font-size:15px;padding:12px 14px;border-radius:9px;border:1px solid rgba(255,255,255,0.18);background:rgba(255,255,255,0.06);color:#fff;outline:none">
@@ -1318,7 +1318,7 @@ class Component extends DCLogic {
 </script>
 <script>
 (function () {
-  // Contact form — document-level delegation so the handler survives any runtime re-render.
+  // Contact form: document-level delegation so the handler survives any runtime re-render.
   document.addEventListener('submit', async function (e) {
     var f = e.target;
     if (!f || f.id !== 'contact-form') return;
@@ -1335,10 +1335,10 @@ class Component extends DCLogic {
     try {
       var r = await fetch('/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
       var j = await r.json().catch(function () { return {}; });
-      if (r.ok) { if (st) st.textContent = 'Got it. Your message went straight to the founders — we\u2019ll be in touch soon.'; f.reset(); }
-      else { if (st) st.textContent = (j && j.error) || 'Something went wrong — please try again.'; }
+      if (r.ok) { if (st) st.textContent = 'Got it. Your message went straight to the founders. We\u2019ll be in touch soon.'; f.reset(); }
+      else { if (st) st.textContent = (j && j.error) || 'Something went wrong. Please try again.'; }
     } catch (err) {
-      if (st) st.textContent = 'Network error — please try again.';
+      if (st) st.textContent = 'Network error. Please try again.';
     }
     if (btn) { btn.disabled = false; btn.style.opacity = ''; }
   });
