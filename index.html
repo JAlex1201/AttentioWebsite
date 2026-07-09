@@ -666,7 +666,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blued);outline-offs
 <section id="cta" data-screen-label="CTA" style="background:var(--navy);color:#fff;text-align:center;padding:104px 0">
   <div style="max-width:var(--max);margin:0 auto;padding:0 28px">
     <h2 style="font-family:var(--disp);font-weight:600;letter-spacing:-.02em;line-height:1.08;font-size:clamp(32px,4.4vw,52px);max-width:18ch;margin:0 auto">Bring dependable AI inside your perimeter</h2>
-    <p style="color:#9fb0c2;font-size:18px;margin:18px auto 30px;max-width:46ch">Tell us what your team needs to run locally, and we will show you the benchmark on your own tasks.</p>
+    <p style="color:#9fb0c2;font-size:18px;margin:18px auto 30px;max-width:46ch">Tell us what you need your model to do. We&rsquo;ll benchmark it on your actual tasks &mdash; in your environment, under your rules. Every message goes straight to the founders.</p>
     <form id="contact-form" novalidate style="max-width:520px;margin:0 auto;text-align:left;display:flex;flex-direction:column;gap:14px">
       <label style="display:flex;flex-direction:column;gap:6px;font-size:13.5px;font-weight:600;color:#c7d3e0">Name
         <input name="name" type="text" required maxlength="200" autocomplete="name" style="font-family:var(--body);font-size:15px;padding:12px 14px;border-radius:9px;border:1px solid rgba(255,255,255,0.18);background:rgba(255,255,255,0.06);color:#fff;outline:none">
@@ -674,10 +674,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blued);outline-offs
       <label style="display:flex;flex-direction:column;gap:6px;font-size:13.5px;font-weight:600;color:#c7d3e0">Work email
         <input name="email" type="email" required maxlength="200" autocomplete="email" style="font-family:var(--body);font-size:15px;padding:12px 14px;border-radius:9px;border:1px solid rgba(255,255,255,0.18);background:rgba(255,255,255,0.06);color:#fff;outline:none">
       </label>
-      <label style="display:flex;flex-direction:column;gap:6px;font-size:13.5px;font-weight:600;color:#c7d3e0">What does your team need to run locally?
+      <label style="display:flex;flex-direction:column;gap:6px;font-size:13.5px;font-weight:600;color:#c7d3e0">What do you need your model to do?
         <textarea name="message" required maxlength="5000" rows="4" style="font-family:var(--body);font-size:15px;padding:12px 14px;border-radius:9px;border:1px solid rgba(255,255,255,0.18);background:rgba(255,255,255,0.06);color:#fff;outline:none;resize:vertical"></textarea>
       </label>
-      <button type="submit" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--body);font-weight:600;font-size:15px;padding:12px 20px;border-radius:9px;border:1px solid transparent;background:var(--blue);color:#06243a;cursor:pointer;transition:.15s" style-hover="background:#42a1d8">Get Started</button>
+      <button type="submit" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--body);font-weight:600;font-size:15px;padding:12px 20px;border-radius:9px;border:1px solid transparent;background:var(--blue);color:#06243a;cursor:pointer;transition:.15s" style-hover="background:#42a1d8">Request a benchmark</button>
       <p id="cf-status" role="status" aria-live="polite" style="min-height:20px;margin:0;font-size:14px;text-align:center;color:#9fb0c2"></p>
     </form>
   </div>
@@ -1327,7 +1327,7 @@ class Component extends DCLogic {
     var btn = f.querySelector('button[type="submit"]');
     var data = { name: f.name.value.trim(), email: f.email.value.trim(), message: f.message.value.trim() };
     if (!data.name || !data.email || !data.message || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(data.email)) {
-      if (st) st.textContent = 'Please fill in your name, a valid work email, and a message.';
+      if (st) st.textContent = 'Please add your name, a valid work email, and a note on what you need.';
       return;
     }
     if (btn) { btn.disabled = true; btn.style.opacity = '.6'; }
@@ -1335,7 +1335,7 @@ class Component extends DCLogic {
     try {
       var r = await fetch('/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
       var j = await r.json().catch(function () { return {}; });
-      if (r.ok) { if (st) st.textContent = 'Thanks — we will be in touch shortly.'; f.reset(); }
+      if (r.ok) { if (st) st.textContent = 'Got it. Your message went straight to the founders — we\u2019ll be in touch soon.'; f.reset(); }
       else { if (st) st.textContent = (j && j.error) || 'Something went wrong — please try again.'; }
     } catch (err) {
       if (st) st.textContent = 'Network error — please try again.';
