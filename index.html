@@ -38,6 +38,14 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blued);outline-offs
 .ind-fill{transition:filter .5s ease}
 .ind-card:hover .ind-fill{animation:indhue 7s ease-in-out infinite}
 @keyframes indhue{0%{filter:hue-rotate(0deg) saturate(1)}50%{filter:hue-rotate(26deg) saturate(1.2)}100%{filter:hue-rotate(0deg) saturate(1)}}
+@media(max-width:860px){
+  [data-navlinks]{flex-wrap:nowrap!important;overflow-x:auto;min-width:0;flex:1;justify-content:flex-start;gap:18px!important;scrollbar-width:none;-ms-overflow-style:none;-webkit-overflow-scrolling:touch}
+  [data-navlinks]::-webkit-scrollbar{display:none}
+  [data-navlinks] a{white-space:nowrap;flex:none}
+}
+@media(max-width:720px){
+  [data-grid="carry"]{grid-template-columns:1fr!important}
+}
 </style>
 </helmet>
 
