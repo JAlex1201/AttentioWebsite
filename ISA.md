@@ -3,7 +3,7 @@ project: AttentioWebsite
 task: Cofounder revision — nav, remove factory animation, promote context boxes, contact form, footer
 slug: attentio-website-cofounder-revision
 effort: E3
-phase: learn
+phase: complete
 progress: 39/41
 mode: algorithm
 started: 2026-07-09T19:18:17Z
