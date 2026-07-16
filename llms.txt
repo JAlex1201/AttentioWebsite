@@ -1,0 +1,23 @@
+# Attentio
+
+> Attentio trains models on an organization's rules, policies, data, and sources of truth, then deploys them into the customer's own environment (VPC or on-premise). The model is sovereign: private data stays put, nothing routes back, and when policies change the model is retrained and redeployed like a software update.
+
+Attentio is an AI infrastructure company based in Minneapolis, Minnesota. Instead of carrying rules in prompts, where they drift, degrade, and are paid for on every call, Attentio encodes an organization's rules, principles, and behaviors directly into model weights. The result is AI you own and deploy: reliable adherence from the first token to the last, hardened against prompt extraction and jailbreak pressure, and updated on your schedule.
+
+Key properties:
+
+- Behaviors made permanent: patterns that hold in context get written into the weights; encoded behavior is part of the model itself, not a prompt.
+- Reliability and adherence: instructions hold under pressure across rules, safety, grounding, and agentic steps.
+- Tested under pressure: hardened against exploitation; extraction and jailbreak attempts are turned away and benchmarked.
+- Sovereign by design: the model deploys into your environment, works with leading open weight models (GPT OSS, Llama, Nemotron, Gemma, Phi, Granite, Olmo, Arcee, Mistral, Qwen, Kimi, GLM), connects to your databases and sources of truth, and runs on AWS, Azure, Google Cloud, or on-premise. Your data never leaves your environment.
+- Built to adapt: policy changes ship as model updates, versioned like software.
+
+## Site
+
+- [Attentio home](https://attentio.ai/): single-page overview of the product, testing evidence, sovereignty model, and update workflow
+- [Contact](https://attentio.ai/#contact): tell us what you need your model to do; we benchmark it on your actual tasks, in your environment, under your rules
+
+## Contact
+
+- Email: jake@attentio.ai
+- Company: Attentio, Minneapolis, Minnesota, USA

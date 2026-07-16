@@ -106,10 +106,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blued);outline-offs
 .ev-card{flex:1 1 0;min-width:0;transition:flex-grow .55s cubic-bezier(.22,1,.36,1),box-shadow .45s ease}
 .ev-card:hover{flex-grow:2.05;box-shadow:0 18px 44px -20px rgba(14,23,34,.32)}
 .ev-shot{transform:scale(.575);transform-origin:top left}
-@keyframes flowdrop{0%{transform:translateY(0);opacity:0}15%{opacity:1}60%{transform:translateY(30px);opacity:1}78%{transform:translateY(36px);opacity:0}100%{transform:translateY(36px);opacity:0}}
-@keyframes flowxch{0%,22%{transform:translateY(0);opacity:0}34%{opacity:1}66%{transform:translateY(13px);opacity:1}82%,100%{transform:translateY(13px);opacity:0}}
-.flow-drop{animation:flowdrop 2.8s cubic-bezier(.45,0,.55,1) infinite}
-.flow-xch{animation:flowxch 2.8s ease-in-out infinite;animation-delay:.9s}
 .ind-scroll{scrollbar-width:none;-ms-overflow-style:none}
 .ind-scroll::-webkit-scrollbar{display:none;height:0}
 .ind-fill{transition:filter .5s ease}
@@ -120,8 +116,80 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blued);outline-offs
   [data-navlinks]::-webkit-scrollbar{display:none}
   [data-navlinks] a{white-space:nowrap;flex:none}
 }
+@media(max-width:520px){
+  nav>div{padding:11px 14px!important;gap:12px!important}
+  [data-navlinks]{gap:11px!important;justify-content:flex-end}
+  [data-navlinks] a{font-size:13px!important}
+  [data-navlinks] a[href="#cta"]{padding:7px 11px!important}
+  nav a[href="#hero"] span{font-size:16px!important}
+}
 @media(max-width:720px){
   [data-grid="carry"]{grid-template-columns:1fr!important}
+  [data-grid="sphere-a"],[data-grid="sphere-b"],[data-grid="adapt"]{grid-template-columns:1fr!important;gap:36px!important}
+  [data-grid="sphere-a"]>div:last-child{height:320px!important}
+  [data-grid="sphere-b"]>div:first-child{height:320px!important;order:2}
+  .ev-row{flex-direction:column}
+  .ev-card{height:auto!important;flex:none}
+  .ev-card:hover{flex-grow:0}
+  .ev-clip{position:static!important;width:100%;aspect-ratio:860/700;overflow:hidden;container-type:inline-size}
+  .ev-shot{transform:scale(.385);transform:scale(calc(100cqw / 860px))}
+  .ev-cap{position:static!important;height:auto!important;min-height:90px}
+  .ev-cap span{white-space:normal!important}
+}
+/* Sovereign by Design v2 */
+.sv img{display:block}
+.sv{padding:96px 0 88px;background:var(--bg);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.sv-wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+.sv-card{background:var(--bg2);border:1px solid var(--line);border-radius:16px;box-shadow:0 14px 36px -26px rgba(14,23,34,.25)}
+
+.sv-h2{font-family:var(--disp);font-weight:600;letter-spacing:-.025em;line-height:1.05;font-size:clamp(36px,5vw,58px);text-align:center;margin:14px 0 18px}
+.sv-lede{color:var(--steel);font-size:17px;text-align:center;max-width:60ch;margin:0 auto;line-height:1.65}
+
+.sv-proc{display:grid;grid-template-columns:1.05fr 1fr 1fr 1fr;margin-top:44px}
+.sv-proc>div{padding:26px 22px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.sv-proc>div+div{border-left:1px solid var(--line)}
+.sv-proc>div.sv-brand{flex-direction:row;justify-content:center;align-items:center;gap:11px}
+.sv-brand span{font-family:var(--disp);font-weight:600;font-size:26px;letter-spacing:-.02em}
+.sv-ptitle{font-family:var(--disp);font-weight:600;font-size:13.5px;letter-spacing:.04em;text-transform:uppercase}
+.sv-pdesc{font-size:13px;color:var(--steel);line-height:1.5;margin-top:5px;min-height:40px;max-width:30ch}
+
+.sv-envhead{display:flex;align-items:center;justify-content:center;gap:9px;padding:13px 18px;border-bottom:1px solid var(--line);background:rgba(22,104,176,.05);border-radius:16px 16px 0 0;font-family:var(--mono);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--blued);font-weight:700}
+.sv-env{display:grid;grid-template-columns:1.52fr 1fr 1fr}
+.sv-env>div{padding:30px 28px}
+.sv-env>div+div{border-left:1px solid var(--line)}
+.sv-coltitle{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--blued);font-weight:700;text-align:center;margin-bottom:22px}
+.sv-models{display:grid;grid-template-columns:repeat(4,1fr);gap:26px 14px;justify-items:center}
+.sv-m{display:grid;grid-template-rows:28px auto;gap:9px;justify-items:center;align-items:center;text-align:center}
+.sv-m img{height:28px;width:auto;max-width:58px;object-fit:contain}
+.sv-mname{font-size:11.5px;font-weight:600;color:var(--ink);line-height:1.3}
+
+.sv-datarow{display:flex;justify-content:center;gap:44px;margin-top:6px}
+.sv-d{display:flex;flex-direction:column;align-items:center;gap:10px}
+.sv-dlabel{font-size:12.5px;font-weight:600;color:var(--ink)}
+.sv-capdiv{width:44px;height:2px;background:rgba(22,104,176,.35);margin:22px auto 16px}
+.sv-cap{font-size:14px;color:var(--steel);text-align:center;line-height:1.55;max-width:24ch;margin:0 auto}
+
+.sv-clouds{display:flex;justify-content:center;align-items:flex-end;gap:16px;margin-top:6px;flex-wrap:wrap}
+.sv-c{display:flex;flex-direction:column;align-items:center;gap:9px}
+.sv-c img{height:22px;width:auto;max-width:56px;object-fit:contain}
+.sv-clabel{font-size:11.5px;font-weight:600;color:var(--ink)}
+
+
+
+@media(max-width:980px){
+  .sv-proc{grid-template-columns:1fr 1fr}
+  .sv-proc>div+div{border-left:none}
+  .sv-proc>div:nth-child(2n){border-left:1px solid var(--line)}
+  .sv-proc>div:nth-child(n+3){border-top:1px solid var(--line)}
+  .sv-env{grid-template-columns:1fr}
+  .sv-env>div+div{border-left:none;border-top:1px solid var(--line)}
+}
+@media(max-width:620px){
+  .sv-proc{grid-template-columns:1fr}
+  .sv-proc>div{border-left:none!important}
+  .sv-proc>div+div{border-top:1px solid var(--line)}
+  .sv-datarow{gap:30px}
+  .sv-clouds{gap:20px}
 }
 </style>
 </helmet>
@@ -132,6 +200,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blued);outline-offs
 <path d="M 79,434.5 L 64,434.5 L 61.5,432 L 61.5,369 L 67,365.5 L 74,365.5 L 85,362.5 L 100,355.5 L 117,342.5 L 135.5,322 L 164.5,278 L 209.5,193 L 224.5,168 L 240.5,144 L 257.5,123 L 273,107.5 L 294,92.5 L 309,85.5 L 327,80.5 L 343,80.5 L 357,83.5 L 372,90.5 L 380,96.5 L 387.5,104 L 397.5,118 L 405.5,136 L 412.5,165 L 415.5,196 L 415.5,215 L 413,217.5 L 404.5,205 L 396,196.5 L 389,192.5 L 383,190.5 L 370,190.5 L 361,193.5 L 358.5,191 L 358.5,180 L 355.5,167 L 352.5,161 L 346,154.5 L 341,152.5 L 330,152.5 L 320,155.5 L 311,160.5 L 293.5,177 L 274.5,203 L 251.5,243 L 208.5,327 L 197.5,345 L 173.5,378 L 149,403.5 L 128,418.5 L 101,430.5 Z" fill="#51ADE0"/>
 <path d="M 194,504.5 L 158,504.5 L 145,502.5 L 125,496.5 L 112,490.5 L 93,478.5 L 82,469.5 L 63.5,450 L 66,447.5 L 85,447.5 L 100,444.5 L 117,438.5 L 130,430.5 L 133,430.5 L 144,437.5 L 160,443.5 L 176,445.5 L 185,444.5 L 204,437.5 L 218,427.5 L 237.5,406 L 253.5,382 L 284.5,322 L 314.5,259 L 324.5,242 L 336.5,225 L 354,208.5 L 368,202.5 L 385,203.5 L 391,206.5 L 404.5,222 L 410.5,235 L 417.5,260 L 432.5,359 L 437.5,376 L 443,383.5 L 447,385.5 L 452,385.5 L 462.5,377 L 472.5,358 L 485.5,325 L 488,322.5 L 522,320.5 L 524.5,323 L 509.5,372 L 501.5,391 L 488.5,414 L 482.5,422 L 470,434.5 L 464,438.5 L 451,443.5 L 437,443.5 L 424,437.5 L 411.5,425 L 401.5,408 L 393.5,386 L 389.5,370 L 380.5,305 L 379.5,302 L 374,296.5 L 365,296.5 L 357.5,303 L 350.5,314 L 321.5,381 L 303.5,417 L 288.5,441 L 275.5,458 L 257,476.5 L 239,489.5 L 220,498.5 Z" fill="currentColor"/>
 </symbol></svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-lock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></g></symbol>
+<symbol id="i-db" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></g></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></g></symbol>
+<symbol id="i-rack" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><path d="M6 6h.01M6 18h.01"/></g></symbol>
+</svg>
 
 <nav aria-label="Primary" style="position:sticky;top:0;z-index:50;background:rgba(237,240,244,.82);backdrop-filter:saturate(140%) blur(10px);-webkit-backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--line)">
   <div style="max-width:var(--max);margin:0 auto;padding:13px 28px;display:flex;align-items:center;justify-content:space-between;gap:24px">
@@ -140,12 +214,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blued);outline-offs
       <span style="font-family:var(--disp);font-weight:600;font-size:18px;letter-spacing:-.01em">Attentio</span>
     </a>
     <div style="display:flex;gap:26px;align-items:center;flex-wrap:wrap" data-navlinks>
-      <a href="#permanence" style="font-size:14.5px;color:var(--steel);font-weight:500;text-decoration:none;transition:.15s" style-hover="color:var(--ink)">Permanence</a>
-      <a href="#reliability" style="font-size:14.5px;color:var(--steel);font-weight:500;text-decoration:none;transition:.15s" style-hover="color:var(--ink)">Reliability</a>
       <a href="#pipeline" style="font-size:14.5px;color:var(--steel);font-weight:500;text-decoration:none;transition:.15s" style-hover="color:var(--ink)">How it works</a>
-      <a href="#evidence" style="font-size:14.5px;color:var(--steel);font-weight:500;text-decoration:none;transition:.15s" style-hover="color:var(--ink)">Testing</a>
       <a href="#sovereign" style="font-size:14.5px;color:var(--steel);font-weight:500;text-decoration:none;transition:.15s" style-hover="color:var(--ink)">Sovereignty</a>
-      <a href="#adapt" style="font-size:14.5px;color:var(--steel);font-weight:500;text-decoration:none;transition:.15s" style-hover="color:var(--ink)">Adaptability</a>
       <a href="#cta" style="font-size:14.5px;font-family:var(--body);font-weight:600;padding:8px 15px;border-radius:8px;background:var(--navy);color:#fff;text-decoration:none;transition:.15s" style-hover="background:#0a1622">Contact</a>
     </div>
   </div>
@@ -257,10 +327,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blued);outline-offs
   <div style="max-width:var(--max);margin:0 auto;padding:0 28px">
     <h2 style="font-family:var(--disp);font-weight:600;letter-spacing:-.02em;line-height:1.12;font-size:clamp(28px,3.4vw,40px);margin:0 0 10px;text-align:left">Tested Under Pressure</h2>
     <p data-rv="0" style="color:var(--steel);font-size:15.5px;max-width:54ch;margin:2px 0 26px">Hardened against exploitation. Attempts to trick the model out of its rules get turned away.</p>
-    <div data-rv="1" style="display:flex;gap:16px;align-items:stretch">
+    <div data-rv="1" class="ev-row" style="display:flex;gap:16px;align-items:stretch">
 
       <div class="ev-card" style="position:relative;height:484px;border:1px solid var(--line);border-radius:16px;background:var(--bg2);overflow:hidden;box-shadow:0 3px 10px -4px rgba(14,23,34,.16)">
-        <div style="position:absolute;left:0;right:0;top:0;bottom:90px;overflow:hidden;background:var(--bg2)">
+        <div class="ev-clip" style="position:absolute;left:0;right:0;top:0;bottom:90px;overflow:hidden;background:var(--bg2)">
           <div class="ev-shot" style="width:860px">
             <div style="display:flex;align-items:center;gap:14px;padding:10px 16px;border-bottom:1px solid var(--line);background:var(--bg2)">
               <div style="display:flex;align-items:center;gap:8px;flex:none">
@@ -386,7 +456,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blued);outline-offs
             </div>
           </div>
         </div>
-        <div style="position:absolute;left:0;right:0;bottom:0;height:90px;background:var(--bg2);border-top:1px solid var(--line);padding:12px 18px;display:flex;flex-direction:column;gap:2px;justify-content:center">
+        <div class="ev-cap" style="position:absolute;left:0;right:0;bottom:0;height:90px;background:var(--bg2);border-top:1px solid var(--line);padding:12px 18px;display:flex;flex-direction:column;gap:2px;justify-content:center">
           <span style="font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--steel2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">rules in the prompt</span>
           <span style="font-family:var(--disp);font-weight:600;font-size:16px;letter-spacing:-.01em;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Pressure finds the seams</span>
           <span style="font-size:12.5px;color:var(--steel);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">The extraction attack pulls prompt-carried rules back out.</span>
@@ -394,7 +464,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blued);outline-offs
       </div>
 
       <div class="ev-card" style="position:relative;height:484px;border:1px solid var(--line);border-radius:16px;background:var(--bg2);overflow:hidden;box-shadow:0 3px 10px -4px rgba(14,23,34,.16)">
-        <div style="position:absolute;left:0;right:0;top:0;bottom:90px;overflow:hidden;background:var(--bg2)">
+        <div class="ev-clip" style="position:absolute;left:0;right:0;top:0;bottom:90px;overflow:hidden;background:var(--bg2)">
           <div class="ev-shot" style="width:860px">
             <div style="display:flex;align-items:center;gap:14px;padding:10px 16px;border-bottom:1px solid var(--line);background:var(--bg2)">
               <div style="display:flex;align-items:center;gap:8px;flex:none">
@@ -512,7 +582,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blued);outline-offs
             </div>
           </div>
         </div>
-        <div style="position:absolute;left:0;right:0;bottom:0;height:90px;background:var(--bg2);border-top:1px solid var(--line);padding:12px 18px;display:flex;flex-direction:column;gap:2px;justify-content:center">
+        <div class="ev-cap" style="position:absolute;left:0;right:0;bottom:0;height:90px;background:var(--bg2);border-top:1px solid var(--line);padding:12px 18px;display:flex;flex-direction:column;gap:2px;justify-content:center">
           <span style="font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--blued);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">rules in the weights</span>
           <span style="font-family:var(--disp);font-weight:600;font-size:16px;letter-spacing:-.01em;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">The model declines</span>
           <span style="font-size:12.5px;color:var(--steel);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Prompt empty. The embedded policy answers, and the check scores 1.00.</span>
@@ -520,7 +590,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blued);outline-offs
       </div>
 
       <div class="ev-card" style="position:relative;height:484px;border:1px solid var(--line);border-radius:16px;background:var(--bg2);overflow:hidden;box-shadow:0 3px 10px -4px rgba(14,23,34,.16)">
-        <div style="position:absolute;left:0;right:0;top:0;bottom:90px;overflow:hidden;background:var(--bg2)">
+        <div class="ev-clip" style="position:absolute;left:0;right:0;top:0;bottom:90px;overflow:hidden;background:var(--bg2)">
           <div class="ev-shot" style="width:860px">
             <div style="width:860px;height:686px;display:flex;background:var(--bg2)">
               <div style="width:232px;flex:none;background:var(--bg);border-right:1px solid var(--line);display:flex;flex-direction:column;padding:16px 13px 13px">
@@ -609,7 +679,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blued);outline-offs
             </div>
           </div>
         </div>
-        <div style="position:absolute;left:0;right:0;bottom:0;height:90px;background:var(--bg2);border-top:1px solid var(--line);padding:12px 18px;display:flex;flex-direction:column;gap:2px;justify-content:center">
+        <div class="ev-cap" style="position:absolute;left:0;right:0;bottom:0;height:90px;background:var(--bg2);border-top:1px solid var(--line);padding:12px 18px;display:flex;flex-direction:column;gap:2px;justify-content:center">
           <span style="font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--steel2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">in production</span>
           <span style="font-family:var(--disp);font-weight:600;font-size:16px;letter-spacing:-.01em;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">The assistant, live</span>
           <span style="font-size:12.5px;color:var(--steel);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Pushed to estimate prices, it stays on the menu data.</span>
@@ -620,83 +690,68 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blued);outline-offs
   </div>
 </section>
 
-<section ref="{{ sovereignRef }}" id="sovereign" data-screen-label="Sovereign" style="background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:104px 0">
-  <div style="max-width:var(--max);margin:0 auto;padding:0 28px">
-    <h2 style="font-family:var(--disp);font-weight:600;letter-spacing:-.02em;line-height:1.12;font-size:clamp(28px,3.4vw,40px);margin:0 0 14px;text-align:center">Sovereign by Design</h2>
-    <p data-rv="1" style="color:var(--steel);font-size:16.5px;max-width:62ch;margin:2px auto 0;text-align:center">Your model and your rules, deployed into your environment. When your policies are updated, your model is redeployed, into your VPC or On-Premise. The private data it interacts with stays put. Nothing routes back.</p>
+<section ref="{{ sovereignRef }}" id="sovereign" class="sv" data-screen-label="Sovereign" aria-labelledby="sovereign-heading">
+  <div class="sv-wrap">    <h2 id="sovereign-heading" class="sv-h2">Sovereign by Design</h2>
+    <p class="sv-lede">Your model and your rules, deployed into your environment.<br>
+    When your policies are updated, your model is redeployed.<br>
+    The private data it interacts with stays put. Nothing routes back.</p>
 
-    <div data-rv="2" style="margin:44px auto 0;max-width:680px">
-      <div style="display:flex;flex-direction:column;align-items:center">
-        <div data-rv="3" style="display:flex;flex-direction:column;align-items:center;gap:7px">
-          <div style="display:flex;align-items:center;gap:8px">
-            <svg width="20" height="20" aria-hidden="true" style="color:var(--navy)"><use href="#amark"/></svg>
-            <span style="font-family:var(--disp);font-weight:600;font-size:15px;letter-spacing:-.01em;color:var(--ink)">Attentio</span>
-          </div>
-          <span style="font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--steel2)">deploy model</span>
-          <div style="position:relative;display:flex;justify-content:center">
-            <svg width="12" height="46" viewBox="0 0 12 46" fill="none" stroke="rgba(34,49,69,0.55)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2v36"/><path d="m2 34 4 6 4-6"/></svg>
-            <span class="flow-drop" aria-hidden="true" style="position:absolute;left:calc(50% - 2.5px);top:2px;width:5px;height:5px;border-radius:50%;background:var(--blued)"></span>
-          </div>
-        </div>
-        <div style="display:flex;flex-direction:column;width:100%;margin-top:10px">
-        <div data-rv="4" style="width:100%;display:flex;align-items:center;gap:16px">
-          <span style="flex:1;height:1px;background:var(--line)"></span>
-          <span style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--steel2);white-space:nowrap">your environment</span>
-          <span style="flex:1;height:1px;background:var(--line)"></span>
-        </div>
-        <div style="width:100%;padding:24px 10px 0;background:radial-gradient(72% 80% at 50% 26%,rgba(255,255,255,0.95),rgba(255,255,255,0) 74%)">
-          <div data-rv="5" style="display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap">
-            <span style="display:flex;align-items:center;gap:6px">
-              <img src="assets/arcee-logo.png" alt="Arcee" style="width:15px;height:15px;object-fit:contain;display:block;mix-blend-mode:multiply">
-              <span style="font-size:12px;font-weight:600;color:var(--ink)">Arcee</span>
-            </span>
-            <span style="display:flex;align-items:center;gap:6px">
-              <svg width="18" height="10" viewBox="0 0 30 16" fill="none" stroke="#0668E1" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M4 8c0-3 2-5.5 4.5-5.5S13 5 15 8s4 5.5 6.5 5.5S26 11 26 8s-2-5.5-4.5-5.5S17 5 15 8s-4 5.5-6.5 5.5S4 11 4 8z"/></svg>
-              <span style="font-size:12px;font-weight:600;color:var(--ink)">Llama</span>
-            </span>
-            <span style="display:flex;align-items:center;gap:6px">
-              <svg width="13" height="13" viewBox="0 0 15 15" aria-hidden="true"><rect x="0" y="0" width="3" height="3" fill="#FFD800"/><rect x="12" y="0" width="3" height="3" fill="#FFD800"/><rect x="0" y="3" width="3" height="3" fill="#FFAF00"/><rect x="3" y="3" width="3" height="3" fill="#FFAF00"/><rect x="9" y="3" width="3" height="3" fill="#FFAF00"/><rect x="12" y="3" width="3" height="3" fill="#FFAF00"/><rect x="0" y="6" width="3" height="3" fill="#FF8205"/><rect x="6" y="6" width="3" height="3" fill="#FF8205"/><rect x="12" y="6" width="3" height="3" fill="#FF8205"/><rect x="0" y="9" width="3" height="3" fill="#FA500F"/><rect x="12" y="9" width="3" height="3" fill="#FA500F"/><rect x="0" y="12" width="3" height="3" fill="#E10500"/><rect x="12" y="12" width="3" height="3" fill="#E10500"/></svg>
-              <span style="font-size:12px;font-weight:600;color:var(--ink)">Mistral</span>
-            </span>
-            <span style="display:flex;align-items:center;gap:6px">
-              <img src="assets/qwen-logo.png" alt="Qwen" style="width:17px;height:17px;object-fit:contain;display:block;mix-blend-mode:multiply">
-              <span style="font-size:12px;font-weight:600;color:var(--ink)">Qwen</span>
-            </span>
-            <span style="display:flex;align-items:center;gap:6px">
-              <img src="assets/deepseek-logo.png" alt="DeepSeek" style="width:20px;height:20px;object-fit:contain;display:block;mix-blend-mode:multiply">
-              <span style="font-size:12px;font-weight:600;color:var(--ink)">DeepSeek</span>
-            </span>
-          </div>
-          <div data-rv="6">
-            <div style="position:relative;display:flex;justify-content:center;margin:12px 0 8px">
-              <span style="width:0;height:18px;border-left:1px solid rgba(34,49,69,0.3)"></span>
-              <span class="flow-xch" aria-hidden="true" style="position:absolute;left:calc(50% - 2px);top:1px;width:4px;height:4px;border-radius:50%;background:#2E7D53"></span>
-            </div>
-            <div style="display:flex;justify-content:center;gap:36px;flex-wrap:wrap">
-              <div style="display:flex;align-items:center;gap:8px">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--steel)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>
-                <span style="font-size:13px;font-weight:500;color:var(--ink)">Databases</span>
-              </div>
-              <div style="display:flex;align-items:center;gap:8px">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--steel)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-                <span style="font-size:13px;font-weight:500;color:var(--ink)">Sources of truth</span>
-              </div>
-            </div>
-          </div>
-          <div data-rv="7" style="margin-top:24px;padding-bottom:2px;display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap">
-            <span style="font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--steel2)">runs on</span>
-            <span style="display:flex;flex-direction:column;align-items:center;line-height:1">
-              <span style="font-family:var(--disp);font-weight:700;font-size:14px;letter-spacing:-.01em;color:#232F3E">aws</span>
-              <svg width="30" height="8" viewBox="0 0 34 9" fill="none" aria-hidden="true"><path d="M2 2c8 5.5 22 5.5 30-1" stroke="#FF9900" stroke-width="2" stroke-linecap="round"/><path d="m27.5 1.2 4.8-.3-1.7 4" stroke="#FF9900" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-            <svg width="17" height="17" viewBox="0 0 15 15" aria-hidden="true"><rect width="7" height="7" fill="#F25022"/><rect x="8" width="7" height="7" fill="#7FBA00"/><rect y="8" width="7" height="7" fill="#00A4EF"/><rect x="8" y="8" width="7" height="7" fill="#FFB900"/></svg>
-            <img src="assets/gcloud-logo.png" alt="Google Cloud" style="width:26px;height:26px;object-fit:contain;display:block">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><path d="M6 6h.01M6 18h.01"/></svg>
-          </div>
-        </div>
-        </div>
+    <div class="sv-card sv-proc">
+      <div class="sv-brand">
+        <svg width="34" height="34" aria-hidden="true" style="color:var(--navy)"><use href="#amark"/></svg>
+        <span>Attentio</span>
+      </div>
+      <div>        <div><div class="sv-ptitle">Deploy model</div><div class="sv-pdesc">We deliver a model trained on your data.</div></div>
+      </div>
+      <div>        <div><div class="sv-ptitle">Your rules</div><div class="sv-pdesc">Business policies and guardrails.</div></div>
+      </div>
+      <div>        <div><div class="sv-ptitle">Redeploy updates</div><div class="sv-pdesc">When policies change, we update your model.</div></div>
       </div>
     </div>
+
+    <div class="sv-card" style="margin-top:18px">
+    <div class="sv-envhead"><svg width="13" height="13" aria-hidden="true"><use href="#i-lock"/></svg>deployed in your environment</div>
+    <div class="sv-env">
+      <div>
+        <div class="sv-coltitle">Works with leading open weight models</div>
+        <div class="sv-models">
+          <span class="sv-m"><img src="assets/logos/openai.svg" alt="OpenAI GPT OSS" style="height:27px"><span class="sv-mname">GPT OSS</span></span>
+          <span class="sv-m"><img src="assets/logos/meta.svg" alt="Meta Llama" style="height:25px"><span class="sv-mname">Llama</span></span>
+          <span class="sv-m"><img src="assets/logos/nvidia.svg" alt="NVIDIA Nemotron"><span class="sv-mname">Nemotron</span></span>
+          <span class="sv-m"><img src="assets/logos/gemma.svg" alt="Google Gemma" style="height:27px"><span class="sv-mname">Gemma</span></span>
+          <span class="sv-m"><img src="assets/logos/microsoft.svg" alt="Microsoft Phi" style="height:24px"><span class="sv-mname">Phi</span></span>
+          <span class="sv-m"><img src="assets/logos/ibm.svg?v=3" alt="IBM Granite" style="height:22px;max-width:54px"><span class="sv-mname">Granite</span></span>
+          <span class="sv-m"><img src="assets/logos/ai2.svg" alt="Ai2 Olmo" style="height:20px"><span class="sv-mname">Olmo</span></span>
+          <span class="sv-m"><img src="assets/logos/arcee.svg" alt="Arcee" style="height:27px"><span class="sv-mname">Arcee</span></span>
+          <span class="sv-m"><img src="assets/logos/mistral.svg" alt="Mistral" style="height:25px"><span class="sv-mname">Mistral</span></span>
+          <span class="sv-m"><img src="assets/logos/qwen.svg" alt="Qwen" style="height:27px"><span class="sv-mname">Qwen</span></span>
+          <span class="sv-m"><img src="assets/logos/moonshot.svg" alt="Moonshot Kimi" style="height:25px"><span class="sv-mname">Kimi</span></span>
+          <span class="sv-m"><img src="assets/logos/zai.svg" alt="Z.ai GLM" style="height:22px"><span class="sv-mname">GLM</span></span>
+        </div>
+      </div>
+      <div>
+        <div class="sv-coltitle">Connected to your data</div>
+        <div class="sv-datarow">
+          <span class="sv-d"><svg width="34" height="34" style="color:var(--ink)" aria-hidden="true"><use href="#i-db"/></svg><span class="sv-dlabel">Databases</span></span>
+          <span class="sv-d"><svg width="34" height="34" style="color:var(--ink)" aria-hidden="true"><use href="#i-book"/></svg><span class="sv-dlabel">Sources of truth</span></span>
+        </div>
+        <div class="sv-capdiv"></div>
+        <p class="sv-cap">Your data never leaves your environment.</p>
+      </div>
+      <div>
+        <div class="sv-coltitle">Runs where you run</div>
+        <div class="sv-clouds">
+          <span class="sv-c"><img src="assets/logos/aws.svg" alt="AWS"><span class="sv-clabel">AWS</span></span>
+          <span class="sv-c"><img src="assets/logos/azure.svg" alt="Azure"><span class="sv-clabel">Azure</span></span>
+          <span class="sv-c"><img src="assets/logos/googlecloud.svg" alt="Google Cloud"><span class="sv-clabel">Google Cloud</span></span>
+          <span class="sv-c"><svg width="28" height="28" style="color:var(--ink)" aria-hidden="true"><use href="#i-rack"/></svg><span class="sv-clabel">On-Prem</span></span>
+        </div>
+        <div class="sv-capdiv"></div>
+        <p class="sv-cap">Deploy in the environment you trust. Cloud or on-premise.</p>
+      </div>
+    </div>
+    </div>
+
   </div>
 </section>
 
